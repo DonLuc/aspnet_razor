@@ -24,6 +24,7 @@ namespace LucasWeb.Pages.Categories
         public async Task<IActionResult> OnPost() {
             _db.Category.Remove(Category);
             await _db.SaveChangesAsync();
+            TempData["success"] = "Category deleted successfully";
             return RedirectToPage("Index");
         }
     }

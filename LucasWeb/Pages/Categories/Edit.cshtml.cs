@@ -39,6 +39,7 @@ namespace LucasWeb.Pages.Categories
                 }
                 _db.Category.Update(Category);
                 await _db.SaveChangesAsync();
+                TempData["success"] = "Category updated successfully";
                 return RedirectToPage("Index");
             }
             return Page();
